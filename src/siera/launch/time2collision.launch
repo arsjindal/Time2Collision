@@ -1,0 +1,7 @@
+<launch>
+  <arg name="ttc" default="6" />
+  <node name="person_detection" pkg="siera" type="listener.py" args="$(arg ttc)" output="screen" />
+  <node name="depth_frame_synchroniser" pkg="siera" type="depth_subscriber.py" output="screen"/>
+  <node name="Depth_Calculator" pkg="siera" type="depth_calculator.py" output="screen"/>
+  <node name="time2collision" pkg="siera" type="time_to_collision.py" output="screen"/>
+</launch>
